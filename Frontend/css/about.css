@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* === Blurred Background === */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+/* === Sticky Navbar === */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #00ffff !important;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+.navbar-nav .nav-link {
+  color: #f0f0f0;
+  margin: 0 10px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #00ffff;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+/* === Main Button Area === */
+.button-container {
+  margin: 100px auto;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.btn-link {
+  padding: 16px 28px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0, 255, 220, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-link:hover {
+  background-color: rgba(0, 255, 220, 0.1);
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 255, 220, 0.4);
+}
+
+.btn-link::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(135deg, rgba(0, 255, 220, 0.2), transparent);
+  transform: rotate(25deg);
+  transition: 0.6s ease;
+}
+
+.btn-link:hover::before {
+  top: 100%;
+}
+
+/* === Glass Section (for about us card etc) === */
+.glass-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  margin: 20px;
+}
+
+/* === Section Headings === */
+.about-section h2 {
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(160, 120, 255, 0.6);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* === Sticky Footer === */
+footer {
+  position: sticky;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  color: #eeeeee;
+  font-size: 0.95rem;
+  padding: 16px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  z-index: 100;
+}
+
+/* === Responsive === */
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+
+  .btn-link {
+    font-size: 1rem;
+    padding: 14px 20px;
+  }
+
+  .button-container {
+    margin: 80px auto;
+    gap: 22px;
+  }
+}

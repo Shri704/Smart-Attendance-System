@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+  min-height: 100vh;
+  padding: 20px;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  text-align: center;
+  color: #00ffff;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 2rem;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  color: #ccc;
+  font-weight: 600;
+}
+
+select, input[type="date"] {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 12px;
+  border: none;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  background-color: #fff;
+  color: #000;
+}
+
+select:focus, input:focus {
+  outline: 2px solid cyan;
+  transform: scale(1.02);
+}
+
+.generate-btn {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #00ffff, #00bfff);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.5);
+}
+
+.generate-btn:hover {
+  background: linear-gradient(135deg, #00e1ff, #00aaff);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 255, 255, 0.7);
+}
+
+.report-table-container {
+  overflow-x: auto;
+  margin-top: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: #111;
+  color: #00ffff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+td {
+  background-color: #fff;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  select, input[type="date"] {
+    font-size: 0.95rem;
+  }
+
+  .generate-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance Dashboard</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/dashboard.css" />
+
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- XLSX Library -->
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="top-bar">
+        <h1>
+          <i class="fas fa-calendar-check"></i> Student Attendance Details
+        </h1>
+        <div class="buttons">
+          <a href="generate_report.html" class="green"
+            ><i class="fas fa-chart-bar"></i> Reports</a
+          >
+          <a href="manage_attendance.html" class="blue"
+            ><i class="fas fa-edit"></i> Manage Attendance</a
+          >
+          <a href="add_subject.html" class="orange"
+            ><i class="fas fa-book-medical"></i> Add Subject</a
+          >
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters">
+        <div class="filter-group">
+          <input type="date" id="dateFilter" />
+          <button class="gray" onclick="onclickclear()">
+            <i class="fas fa-times"></i> Clear
+          </button>
+        </div>
+      </div>
+
+      <!-- Subject/Student Selector -->
+      <div class="filters">
+        <div class="filter-group">
+          <select id="semesterSelect">
+            <option value="">Select Semester *</option>
+            <option value="1">Semester 1</option>
+            <option value="2">Semester 2</option>
+            <option value="3">Semester 3</option>
+            <option value="4">Semester 4</option>
+            <option value="5">Semester 5</option>
+            <option value="6">Semester 6</option>
+            <option value="7">Semester 7</option>
+            <option value="8">Semester 8</option>
+          </select>
+
+          <select id="branchSelect">
+            <option value="">Select Branch *</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="MECH">MECH</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="AIML">CSE(AIML)</option>
+          </select>
+
+          <select id="subjectSelect">
+            <option value="">Select Subject *</option>
+          </select>
+
+          <button class="blue" onclick="loadStudentsForSubject()">
+            <i class="fas fa-sync-alt"></i> Load Students
+          </button>
+
+          <!-- ✅ New "Jump to Next Semester" Button -->
+          <button class="jump" onclick="jumpToNextSemester()">
+            <i class="fas fa-forward"></i> Jump to Next Semester
+          </button>
+        </div>
+      </div>
+
+      <!-- Attendance Table -->
+      <div class="table-section">
+        <table>
+          <thead>
+            <tr id="bulkAttendanceHeader">
+              <!-- Dynamic header cells will be injected by JS -->
+            </tr>
+          </thead>
+          <tbody id="bulkAttendanceBody">
+            <!-- Student rows will be injected here -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Save Attendance -->
+      <div class="text-end">
+        <button class="btn" onclick="submitBulkAttendance()">
+          <i class="fas fa-save"></i> Save Attendance
+        </button>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="./js/dashboard.js"></script>
+  </body>
+</html>

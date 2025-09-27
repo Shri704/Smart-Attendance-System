@@ -1,0 +1,6 @@
+Attendance for CS at 10AM
+Date: 2025-06-04
+----------------------------------------
+Name		Time		Status
+----------------------------------------
+55_shrinidhi_CSE		15:51:00		Present

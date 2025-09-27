@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Subject - Smart Attendance System</title>
+  <link rel="stylesheet" href="./css/add_subject.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h3><i class="fas fa-book"></i> Add New Subject</h3>
+      </div>
+      <div class="card-body">
+        <form id="addSubjectForm">
+          <div class="form-group">
+            <label for="subjectCode">Subject Code</label>
+            <input type="text" id="subjectCode" placeholder="e.g. 18CS51" required />
+          </div>
+          <div class="form-group">
+            <label for="subjectName">Subject Name</label>
+            <input type="text" id="subjectName" placeholder="e.g. DBMS" required />
+          </div>
+          <div class="form-group">
+            <label for="subjectBranch">Branch</label>
+            <input type="text" id="subjectBranch" placeholder="e.g. CSE, ECE, MECH" required />
+          </div>
+          <div class="form-group">
+            <label for="subjectSemester">Semester</label>
+            <select id="subjectSemester" required>
+              <option value="">Select Semester</option>
+              <option value="1">Semester 1</option>
+              <option value="2">Semester 2</option>
+              <option value="3">Semester 3</option>
+              <option value="4">Semester 4</option>
+              <option value="5">Semester 5</option>
+              <option value="6">Semester 6</option>
+              <option value="7">Semester 7</option>
+              <option value="8">Semester 8</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">
+            <i class="fas fa-plus-circle"></i> Add Subject
+          </button>
+        </form>
+        <div id="message"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/add_subject.js"></script>
+</body>
+</html>

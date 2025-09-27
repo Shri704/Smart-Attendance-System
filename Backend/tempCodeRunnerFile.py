@@ -1,0 +1,1 @@
+ATTENDANCE_DIR = os.path.join(os.path.dirname(BASE_DIR), "data", "attendance_records")
