@@ -38,8 +38,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-username = "shrinidhish909"
-password = "Narasimha@#5570"  # your actual password
+
 encoded_password = quote_plus(password)  # encodes @ and #
 
 uri = f"mongodb+srv://{username}:{encoded_password}@cluster0.ibftnwf.mongodb.net/?retryWrites=true&w=majority"
