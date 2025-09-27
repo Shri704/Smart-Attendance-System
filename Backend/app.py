@@ -32,19 +32,30 @@ for directory in [KNOWN_FACES_DIR, ATTENDANCE_DIR]:
         os.makedirs(directory)
         logger.info(f"Created directory: {directory}")
 
-# MongoDB Configuration
+from pymongo import MongoClient
+from urllib.parse import quote_plus
+import logging
+
+logger = logging.getLogger(__name__)
+
+username = "shrinidhish909"
+password = "Narasimha@#5570"  # your actual password
+encoded_password = quote_plus(password)  # encodes @ and #
+
+uri = f"mongodb+srv://{username}:{encoded_password}@cluster0.ibftnwf.mongodb.net/?retryWrites=true&w=majority"
+
 try:
-    client = MongoClient('mongodb://127.0.0.1:27017/', serverSelectionTimeoutMS=5000)
-    # Test the connection
+    client = MongoClient(uri, serverSelectionTimeoutMS=5000)
     client.server_info()
+
     db = client['attendance_db']
     students_collection = db['students']
     attendance_collection = db['attendance']
     subjects_collection = db['subjects']
-    logger.info("Successfully connected to MongoDB")
+
+    logger.info("✅ Successfully connected to Atlas MongoDB")
 except Exception as e:
-    logger.error(f"Failed to connect to MongoDB: {e}")
-    logger.error("Please make sure MongoDB is running on localhost:27017")
+    logger.error(f"❌ Failed to connect to MongoDB: {e}")
     raise
 
 @app.route('/register', methods=['POST'])
