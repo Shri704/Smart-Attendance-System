@@ -1,12 +1,7 @@
-# core packages
 Flask==3.0.3
 gunicorn==22.0.0
-
-# face recognition stack
 face-recognition==1.3.0
 dlib==19.24.2
 numpy==1.26.4
 opencv-python==4.10.0.84
-
-# often required for building
 cmake>=3.26.0
