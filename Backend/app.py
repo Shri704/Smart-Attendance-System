@@ -38,6 +38,8 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+username = "shrinidhish909"
+password = "Narasimha@#5570"  # your actual password
 
 encoded_password = quote_plus(password)  # encodes @ and #
 
